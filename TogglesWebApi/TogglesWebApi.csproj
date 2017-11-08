@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\Toggles.BusinessEntities\Toggles.BusinessEntities.csproj" />
+    <ProjectReference Include="..\BLL\Toggles.BusinessRules.Contracts\Toggles.BusinessRules.Contracts.csproj" />
+    <ProjectReference Include="..\BLL\Toggles.BusinessRules\Toggles.BusinessRules.csproj" />
+    <ProjectReference Include="..\DAL\Toggles.DataAccess\Toggles.DataAccess.csproj" />
+    <ProjectReference Include="..\DAL\Toggles.Repositories\Toggles.Repositories.csproj" />
+  </ItemGroup>
+
+</Project>

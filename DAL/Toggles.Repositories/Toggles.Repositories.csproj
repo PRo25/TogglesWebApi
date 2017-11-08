@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\BLL\Toggles.Repositories.Contracts\Toggles.Repositories.Contracts.csproj" />
+    <ProjectReference Include="..\..\Common\Common.Generic\Common.Generic.csproj" />
+    <ProjectReference Include="..\Toggles.DataAccess\Toggles.DataAccess.csproj" />
+  </ItemGroup>
+
+</Project>
