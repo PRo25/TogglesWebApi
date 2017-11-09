@@ -5,6 +5,6 @@ namespace Toggles.Repositories.Contracts
 {
     public interface IToggleValuesReadRepository
     {
-        IList<ToggleValue> GetByApplication(Application application);
+        IList<ToggleValue> GetByApplication(ClientApplication application);
     }
 }

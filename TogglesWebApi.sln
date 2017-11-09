@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TogglesWebApi", "TogglesWebApi\TogglesWebApi.csproj", "{5B3E00DB-326C-4F98-B85E-8E57EEC74881}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TogglesWebApi", "TogglesWebApi\TogglesWebApi.csproj", "{5B3E00DB-326C-4F98-B85E-8E57EEC74881}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLogic", "BusinessLogic", "{223FAA96-BBCF-4198-977F-4EB0D255F78F}"
 EndProject
@@ -11,15 +11,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toggles.BusinessEntities", "BLL\Toggles.BusinessEntities\Toggles.BusinessEntities.csproj", "{5D1F4F2F-F6D7-442B-9CD5-8B0AA9A9C8AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toggles.BusinessRules", "BLL\Toggles.BusinessRules\Toggles.BusinessRules.csproj", "{E420D86A-C82B-40D7-B4F7-B46D9FC1C77B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toggles.BusinessRules", "BLL\Toggles.BusinessRules\Toggles.BusinessRules.csproj", "{E420D86A-C82B-40D7-B4F7-B46D9FC1C77B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toggles.BusinessRules.Contracts", "BLL\Toggles.BusinessRules.Contracts\Toggles.BusinessRules.Contracts.csproj", "{7ECC7610-9457-406C-8D33-4521CC54FEEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toggles.BusinessRules.Contracts", "BLL\Toggles.BusinessRules.Contracts\Toggles.BusinessRules.Contracts.csproj", "{7ECC7610-9457-406C-8D33-4521CC54FEEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toggles.Repositories.Contracts", "BLL\Toggles.Repositories.Contracts\Toggles.Repositories.Contracts.csproj", "{F59AF114-BFA7-48C8-BCC4-E153266D540E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toggles.Repositories.Contracts", "BLL\Toggles.Repositories.Contracts\Toggles.Repositories.Contracts.csproj", "{F59AF114-BFA7-48C8-BCC4-E153266D540E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toggles.Repositories", "DAL\Toggles.Repositories\Toggles.Repositories.csproj", "{3394451E-AA12-4607-A18A-1D45631CE062}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toggles.Repositories", "DAL\Toggles.Repositories\Toggles.Repositories.csproj", "{3394451E-AA12-4607-A18A-1D45631CE062}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toggles.DataAccess", "DAL\Toggles.DataAccess\Toggles.DataAccess.csproj", "{5CD61805-4C4D-48BC-BCF6-0385A8FC8743}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toggles.DataAccess", "DAL\Toggles.DataAccess\Toggles.DataAccess.csproj", "{5CD61805-4C4D-48BC-BCF6-0385A8FC8743}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{71BB7122-CF78-4546-8C53-A89AA14389C0}"
 EndProject
@@ -27,7 +27,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A2605426
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{2F273A15-6B0D-4A54-85CB-02BC63B4753E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Generic", "Common\Common.Generic\Common.Generic.csproj", "{E6751374-BC5B-4D2E-B20E-E1C3AFD42EFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Generic", "Common\Common.Generic\Common.Generic.csproj", "{E6751374-BC5B-4D2E-B20E-E1C3AFD42EFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toggles.BusinessRules.UnitTests", "BLL\Tests\Toggles.BusinessRules.UnitTests\Toggles.BusinessRules.UnitTests.csproj", "{A999DAB2-63F9-4C82-BF06-66A55833B8F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toggles.Repositories.Contracts.Mocks", "BLL\Tests\Toggles.Repositories.Contracts.Mocks\Toggles.Repositories.Contracts.Mocks.csproj", "{2953D5C3-2C60-4D10-BF1D-E489C6F38EC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toggles.BusinessRules.Contracts.Mocks", "BLL\Tests\Toggles.BusinessRules.Contracts.Mocks\Toggles.BusinessRules.Contracts.Mocks.csproj", "{19BBE43C-F9FD-43CC-80A8-DD1347FFE2CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +73,18 @@ Global
 		{E6751374-BC5B-4D2E-B20E-E1C3AFD42EFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6751374-BC5B-4D2E-B20E-E1C3AFD42EFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6751374-BC5B-4D2E-B20E-E1C3AFD42EFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A999DAB2-63F9-4C82-BF06-66A55833B8F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A999DAB2-63F9-4C82-BF06-66A55833B8F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A999DAB2-63F9-4C82-BF06-66A55833B8F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A999DAB2-63F9-4C82-BF06-66A55833B8F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2953D5C3-2C60-4D10-BF1D-E489C6F38EC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2953D5C3-2C60-4D10-BF1D-E489C6F38EC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2953D5C3-2C60-4D10-BF1D-E489C6F38EC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2953D5C3-2C60-4D10-BF1D-E489C6F38EC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19BBE43C-F9FD-43CC-80A8-DD1347FFE2CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19BBE43C-F9FD-43CC-80A8-DD1347FFE2CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19BBE43C-F9FD-43CC-80A8-DD1347FFE2CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19BBE43C-F9FD-43CC-80A8-DD1347FFE2CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +99,9 @@ Global
 		{71BB7122-CF78-4546-8C53-A89AA14389C0} = {223FAA96-BBCF-4198-977F-4EB0D255F78F}
 		{A2605426-3ABC-4152-97A4-CC2F1805F414} = {0F5A9460-FC69-4898-8E0D-3B623D7BC7BF}
 		{E6751374-BC5B-4D2E-B20E-E1C3AFD42EFF} = {2F273A15-6B0D-4A54-85CB-02BC63B4753E}
+		{A999DAB2-63F9-4C82-BF06-66A55833B8F4} = {71BB7122-CF78-4546-8C53-A89AA14389C0}
+		{2953D5C3-2C60-4D10-BF1D-E489C6F38EC7} = {71BB7122-CF78-4546-8C53-A89AA14389C0}
+		{19BBE43C-F9FD-43CC-80A8-DD1347FFE2CC} = {71BB7122-CF78-4546-8C53-A89AA14389C0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A47E7E49-0CC7-4032-8E83-6A625FAB3AE1}

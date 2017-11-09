@@ -100,7 +100,7 @@ namespace TogglesWebApi.Controllers
         [HttpGet("ByApp/{applicationCodeName}/{applicationVersion}")]
         public IActionResult GetByApplication(string applicationCodeName, string applicationVersion)
         {
-            Application application = new Application()
+            ClientApplication application = new ClientApplication()
             {
                 CodeName = applicationCodeName,
                 Version = applicationVersion

@@ -5,6 +5,6 @@ namespace Toggles.BusinessRules.Contracts
 {
     public interface IToggleValuesLoader
     {
-        IList<ToggleValue> GetByApplication(Application application);
+        IList<ToggleValue> GetByApplication(ClientApplication application);
     }
 }

@@ -45,17 +45,17 @@ namespace Toggles.Repositories
             return toggles;
         }
 
-        private IList<ApplicationToggleValue> ProjectToApplicationToggleValues(
+        private IList<ClientApplicationToggleValue> ProjectToApplicationToggleValues(
             ICollection<ToggleValueDbEntity> toggleValuesDbEntities)
         {
-            IList<ApplicationToggleValue> applicationToggleValues =
+            IList<ClientApplicationToggleValue> applicationToggleValues =
                 (from tv in toggleValuesDbEntities
-                 select new ApplicationToggleValue()
+                 select new ClientApplicationToggleValue()
                  {
                      Id = tv.Id,
                      Value = tv.Value,
                      ToggleId = tv.ToggleId,
-                     Application = new Application()
+                     Application = new ClientApplication()
                      {
                          CodeName = tv.ApplicationCodeName,
                          Version = tv.ApplicationVersion

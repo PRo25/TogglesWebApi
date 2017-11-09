@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Toggles.BusinessEntities;
 using Toggles.BusinessRules.Contracts;
 using Toggles.Repositories.Contracts;
@@ -16,7 +14,7 @@ namespace Toggles.BusinessRules
             this.toggleValuesReadRepository = toggleValuesReadRepository;
         }
 
-        public IList<ToggleValue> GetByApplication(Application application)
+        public IList<ToggleValue> GetByApplication(ClientApplication application)
         {
             IList<ToggleValue> result = this.toggleValuesReadRepository.GetByApplication(application);
             return result;

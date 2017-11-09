@@ -15,15 +15,15 @@ namespace Toggles.Repositories
 
         public ITogglesRepository TogglesRepository { get; private set; }
 
-        public IApplicationToggleValuesRepository ApplicationToggleValuesRepository { get; private set; }
+        public IClientApplicationToggleValuesRepository ClientApplicationToggleValuesRepository { get; private set; }
 
         public TogglesUnitOfWork(TogglesDbContext togglesDbContext,
             ITogglesRepository togglesRepository,
-            IApplicationToggleValuesRepository applicationToggleValuesRepository)
+            IClientApplicationToggleValuesRepository applicationToggleValuesRepository)
         {
             this.togglesDbContext = togglesDbContext;
             this.TogglesRepository = togglesRepository;
-            this.ApplicationToggleValuesRepository = applicationToggleValuesRepository;
+            this.ClientApplicationToggleValuesRepository = applicationToggleValuesRepository;
         }
 
         public int SaveChanges()
@@ -77,25 +77,25 @@ namespace Toggles.Repositories
 
         private void ApplyApplicationToggleValueChangesToDbContext()
         {
-            this.ApplyChangedApplicationToggleValues(this.ApplicationToggleValuesRepository.Added,
+            this.ApplyChangedApplicationToggleValues(this.ClientApplicationToggleValuesRepository.Added,
                 (dbEntity) => this.togglesDbContext.ToggleValues.Add(dbEntity));
-            this.ApplyChangedApplicationToggleValues(this.ApplicationToggleValuesRepository.Updated,
+            this.ApplyChangedApplicationToggleValues(this.ClientApplicationToggleValuesRepository.Updated,
                 (dbEntity) => this.togglesDbContext.ToggleValues.Update(dbEntity));
-            this.ApplyChangedApplicationToggleValues(this.ApplicationToggleValuesRepository.Deleted,
+            this.ApplyChangedApplicationToggleValues(this.ClientApplicationToggleValuesRepository.Deleted,
                 (dbEntity) => this.AttachDbEntityAsDeleted(dbEntity));
         }
 
-        private void ApplyChangedApplicationToggleValues(IList<ApplicationToggleValue> changedAppToggleValues,
+        private void ApplyChangedApplicationToggleValues(IList<ClientApplicationToggleValue> changedAppToggleValues,
             Action<ToggleValueDbEntity> applyAction)
         {
-            foreach (ApplicationToggleValue businessEntity in changedAppToggleValues)
+            foreach (ClientApplicationToggleValue businessEntity in changedAppToggleValues)
             {
                 ToggleValueDbEntity dbEntity = this.ConvertToDbEntity(businessEntity);
                 applyAction(dbEntity);
             }
         }
 
-        private ToggleValueDbEntity ConvertToDbEntity(ApplicationToggleValue businessEntity)
+        private ToggleValueDbEntity ConvertToDbEntity(ClientApplicationToggleValue businessEntity)
         {
             ToggleValueDbEntity dbEntity = new ToggleValueDbEntity()
             {

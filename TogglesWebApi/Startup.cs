@@ -33,7 +33,7 @@ namespace TogglesWebApi
             services.AddDbContext<TogglesDbContext>(options => options.UseSqlServer(connectionString));
             services.AddMvc();
 
-            services.AddScoped<IApplicationToggleValuesRepository, ApplicationToggleValuesRepository>();
+            services.AddScoped<IClientApplicationToggleValuesRepository, ClientApplicationToggleValuesRepository>();
             services.AddScoped<ITogglesReadRepository, TogglesReadRepository>();
             services.AddScoped<ITogglesRepository, TogglesRepository>();
             services.AddScoped<IToggleValuesReadRepository, ToggleValuesReadRepository>();

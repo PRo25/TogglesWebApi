@@ -19,10 +19,10 @@ namespace Toggles.BusinessRules
         {
             this.ValidateIfCanExecute(toggle);
             this.unitOfWork.TogglesRepository.Add(toggle);
-            foreach (ApplicationToggleValue appToggleValue in toggle.Values)
+            foreach (ClientApplicationToggleValue appToggleValue in toggle.Values)
             {
                 appToggleValue.ToggleId = toggle.Id;
-                this.unitOfWork.ApplicationToggleValuesRepository.Add(appToggleValue);
+                this.unitOfWork.ClientApplicationToggleValuesRepository.Add(appToggleValue);
             }
             this.unitOfWork.SaveChanges();
         }

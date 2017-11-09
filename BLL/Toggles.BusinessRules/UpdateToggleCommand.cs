@@ -32,34 +32,34 @@ namespace Toggles.BusinessRules
 
         private void AddOrUpdateToggleValues()
         {
-            foreach (ApplicationToggleValue appToggleValue in this.updatedToggle.Values)
+            foreach (ClientApplicationToggleValue appToggleValue in this.updatedToggle.Values)
             {
                 appToggleValue.ToggleId = this.updatedToggle.Id;
                 if (this.ExistsWithSameId(appToggleValue))
                 {
-                    this.unitOfWork.ApplicationToggleValuesRepository.Update(appToggleValue);
+                    this.unitOfWork.ClientApplicationToggleValuesRepository.Update(appToggleValue);
                 }
                 else
                 {
-                    this.unitOfWork.ApplicationToggleValuesRepository.Add(appToggleValue);
+                    this.unitOfWork.ClientApplicationToggleValuesRepository.Add(appToggleValue);
                 }
             }
         }
 
-        private bool ExistsWithSameId(ApplicationToggleValue appToggleValue)
+        private bool ExistsWithSameId(ClientApplicationToggleValue appToggleValue)
         {
             return this.originalExistingToggle.Values.Any(tv => tv.Id == appToggleValue.Id);
         }
 
         private void DeleteExistingToggleValues()
         {
-            IEnumerable<ApplicationToggleValue> toggleValuesToDelete =
+            IEnumerable<ClientApplicationToggleValue> toggleValuesToDelete =
                 from originalToggleValue in this.originalExistingToggle.Values
                 where !this.updatedToggle.Values.Any(tv => tv.Id == originalToggleValue.Id)
                 select originalToggleValue;
-            foreach (ApplicationToggleValue toggleValueToDelete in toggleValuesToDelete)
+            foreach (ClientApplicationToggleValue toggleValueToDelete in toggleValuesToDelete)
             {
-                this.unitOfWork.ApplicationToggleValuesRepository.Delete(toggleValueToDelete);
+                this.unitOfWork.ClientApplicationToggleValuesRepository.Delete(toggleValueToDelete);
             }
         }
     }

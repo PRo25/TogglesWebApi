@@ -3,7 +3,7 @@
     public interface ITogglesUnitOfWork
     {
         ITogglesRepository TogglesRepository { get; }
-        IApplicationToggleValuesRepository ApplicationToggleValuesRepository { get; }
+        IClientApplicationToggleValuesRepository ClientApplicationToggleValuesRepository { get; }
         int SaveChanges();
     }
 }

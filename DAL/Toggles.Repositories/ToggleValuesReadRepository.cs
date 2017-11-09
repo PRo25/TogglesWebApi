@@ -22,7 +22,7 @@ namespace Toggles.Repositories
             this.togglesDbContext = togglesDbContext;
         }
 
-        public IList<ToggleValue> GetByApplication(Application application)
+        public IList<ToggleValue> GetByApplication(ClientApplication application)
         {
             IList<ToggleValueDbEntity> dbEntities = this.GetDbEntitiesByApplication(application);
             IList<ToggleValue> toggleValues = this.GetApplicationToggleValuesFromDbEntities(dbEntities, application);
@@ -32,7 +32,7 @@ namespace Toggles.Repositories
             return toggleValues;
         }
 
-        private IList<ToggleValueDbEntity> GetDbEntitiesByApplication(Application application)
+        private IList<ToggleValueDbEntity> GetDbEntitiesByApplication(ClientApplication application)
         {
             IList<ToggleValueDbEntity> dbEntities =
                 (from tv in this.togglesDbContext.ToggleValues
@@ -46,7 +46,7 @@ namespace Toggles.Repositories
         }
 
         private IList<ToggleValue> GetApplicationToggleValuesFromDbEntities(IList<ToggleValueDbEntity> dbEntities,
-            Application application)
+            ClientApplication application)
         {
             IEnumerable<ToggleValueDbEntity> appToggleValueDbEntities =
                 dbEntities.Where(dbe => dbe.ApplicationCodeName == application.CodeName);

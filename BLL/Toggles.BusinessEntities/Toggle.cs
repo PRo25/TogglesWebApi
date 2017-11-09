@@ -13,11 +13,12 @@ namespace Toggles.BusinessEntities
 
         public string Description { get; set; }
 
-        public IList<ApplicationToggleValue> Values { get; set; }
+        public IList<ClientApplicationToggleValue> Values { get; set; }
 
         public Toggle()
         {
             this.Id = Guid.NewGuid();
+            this.Values = new List<ClientApplicationToggleValue>();
         }
     }
 }

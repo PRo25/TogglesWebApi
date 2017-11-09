@@ -2,7 +2,7 @@
 
 namespace Toggles.BusinessEntities
 {
-    public class Application
+    public class ClientApplication
     {
         [Required]
         public string CodeName { get; set; }

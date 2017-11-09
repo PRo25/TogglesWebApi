@@ -2,9 +2,9 @@
 
 namespace Toggles.BusinessEntities
 {
-    public class ApplicationToggleValue : ToggleValue
+    public class ClientApplicationToggleValue : ToggleValue
     {
         [Required]
-        public Application Application { get; set; }
+        public ClientApplication Application { get; set; }
     }
 }
