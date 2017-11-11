@@ -44,7 +44,19 @@ Note: The toggle values that are defined globally are identified by the applicat
 
 You can test examples of these requests using [Postman](https://www.getpostman.com/) and importing the collection "[Postman/Toggles.postman_collection.json](Postman/Toggles.postman_collection.json)".
 
+## Architecture
+
+This solution follows the [Clean Architecture principles](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html). One of the most important concepts is that the business rules and entities are the core of the application and they must not depend on any code or libraries in the more exterior layers (UI, DB, Web API Controllers, etc.).
+
+The solution uses a layered architectural pattern splitting the code in three layers: REST API Layer, Business Logic Layer and Data Access Layer.
+
+### REST API Layer
+
+### Business Logic Layer
+
+### Data Access Layer
+
 ## TODO
 
-- Implement OAuth2 authentication server
-- Implement toggle changes notifications hub using [ASP.NET Core WebSockets](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/websockets) or wait for [ASP.NET Core SignalR](https://github.com/aspnet/SignalR/releases)
+- Implement OAuth2 authentication server;
+- Implement toggle changes notifications hub using [ASP.NET Core WebSockets](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/websockets) or wait for [ASP.NET Core SignalR](https://github.com/aspnet/SignalR/releases).
