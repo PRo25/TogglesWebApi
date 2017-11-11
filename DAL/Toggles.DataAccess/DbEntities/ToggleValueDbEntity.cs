@@ -4,6 +4,8 @@ namespace Toggles.DataAccess.DbEntities
 {
     public class ToggleValueDbEntity
     {
+        public const string GLOBAL_APPLICATION_CODE_NAME = "Global";
+
         public Guid Id { get; set; }
 
         public Guid ToggleId { get; set; }

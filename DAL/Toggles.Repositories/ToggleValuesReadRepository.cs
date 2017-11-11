@@ -13,8 +13,6 @@ namespace Toggles.Repositories
 {
     public class ToggleValuesReadRepository : IToggleValuesReadRepository
     {
-        protected const string GLOBAL_APPLICATIONS_CODE_NAME = "Global";
-
         private TogglesDbContext togglesDbContext;
 
         public ToggleValuesReadRepository(TogglesDbContext togglesDbContext)
@@ -36,9 +34,9 @@ namespace Toggles.Repositories
         {
             IList<ToggleValueDbEntity> dbEntities =
                 (from tv in this.togglesDbContext.ToggleValues
-                 where (tv.ApplicationCodeName == application.CodeName
+                 where tv.ApplicationCodeName == ToggleValueDbEntity.GLOBAL_APPLICATION_CODE_NAME
+                 || (tv.ApplicationCodeName == application.CodeName
                      && tv.ApplicationVersion == application.Version)
-                 || tv.ApplicationCodeName == GLOBAL_APPLICATIONS_CODE_NAME
                  select tv)
                 .Include(tv => tv.Toggle)
                 .ToList();
@@ -78,7 +76,7 @@ namespace Toggles.Repositories
         {
             IEnumerable<ToggleValueDbEntity> globalToggleValueDbEntities =
                 from tv in dbEntities
-                where tv.ApplicationCodeName == GLOBAL_APPLICATIONS_CODE_NAME
+                where tv.ApplicationCodeName == ToggleValueDbEntity.GLOBAL_APPLICATION_CODE_NAME
                 && !exceptToggleValues.Any(etv => etv.Toggle.Id == tv.ToggleId)
                 select tv;
             IList<ToggleValue> globalToggleValues = this.ProjectToBusinessEntities(globalToggleValueDbEntities);

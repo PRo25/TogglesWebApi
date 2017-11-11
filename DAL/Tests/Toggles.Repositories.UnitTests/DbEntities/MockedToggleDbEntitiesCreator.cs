@@ -10,13 +10,13 @@ namespace Toggles.Repositories.UnitTests.DbEntities
             IList<ToggleDbEntity> toggles = new List<ToggleDbEntity>();
             for (int i = 0; i < nrOfItems; i++)
             {
-                ToggleDbEntity toggle = this.CreateToggle(i.ToString());
+                ToggleDbEntity toggle = this.CreateToggleDbEntity(i.ToString());
                 toggles.Add(toggle);
             }
             return toggles;
         }
 
-        public ToggleDbEntity CreateToggle(string codeNameSuffix = "")
+        public ToggleDbEntity CreateToggleDbEntity(string codeNameSuffix = "")
         {
             var toggle = new ToggleDbEntity()
             {
