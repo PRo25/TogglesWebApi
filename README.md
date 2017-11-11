@@ -54,6 +54,10 @@ The solution uses a layered architectural pattern splitting the code in three la
 
 - **TogglesWebApi**: this project contains the Web API controllers that handle the requests and the Startup code with the IOC Container configuration code.
 
+#### Inversion of Control Container
+
+The solution uses the ASP.NET Core built-in IOC container with all the services registered in the "ConfigureServices" method of the "Startup" class. More info [here](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection).
+
 ### Business Logic Layer
 
 - **Toggles.BusinessEntities**: in this project there are the entities that represent each business concept of the Toggles context;
