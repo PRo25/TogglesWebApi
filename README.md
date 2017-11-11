@@ -28,10 +28,23 @@ The technologies used to develop this Web API were:
 With the solution running, you can start making requests to the REST API. The available operations are:
 
 - GET /api/Toggles
+  - Gets all toggles.
 - GET /api/Toggles/{toggleId}
+  - Gets a toggle by ID.
 - GET /api/Toggles/ByApp/{applicationCodeName}/{applicationVersion}
+  - Gets all toggle values that applies to a client application. This will return all toggle values specifically defined for the client application plus the globally defined values for any other remaining toggle.
 - POST /api/Toggles
+  - Creates a new toggle.
 - PUT /api/Toggles/{toggleId}
+  - Updates an existing toggle.
 - DELETE /api/Toggles/{toggleId}
+  - Deletes an existing toggle.
+  
+Note: The toggle values that are defined globally are identified by the application code name "Global".
 
 You can test examples of these requests using [Postman](https://www.getpostman.com/) and importing the collection "[Postman/Toggles.postman_collection.json](Postman/Toggles.postman_collection.json)".
+
+## TODO
+
+- Implement OAuth2 authentication server
+- Implement toggle changes notifications hub using [ASP.NET Core WebSockets](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/websockets) or wait for [ASP.NET Core SignalR](https://github.com/aspnet/SignalR/releases)
