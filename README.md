@@ -27,17 +27,17 @@ The technologies used to develop this Web API were:
 
 With the solution running, you can start making requests to the REST API. The available operations are:
 
-- GET /api/Toggles
+- **GET /api/Toggles**
   - Gets all toggles.
-- GET /api/Toggles/{toggleId}
+- **GET /api/Toggles/{toggleId}**
   - Gets a toggle by ID.
-- GET /api/Toggles/ByApp/{applicationCodeName}/{applicationVersion}
+- **GET /api/Toggles/ByApp/{applicationCodeName}/{applicationVersion}**
   - Gets all toggle values that applies to a client application. This will return all toggle values specifically defined for the client application plus the globally defined values for any other remaining toggle.
-- POST /api/Toggles
+- **POST /api/Toggles**
   - Creates a new toggle.
-- PUT /api/Toggles/{toggleId}
+- **PUT /api/Toggles/{toggleId}**
   - Updates an existing toggle.
-- DELETE /api/Toggles/{toggleId}
+- **DELETE /api/Toggles/{toggleId}**
   - Deletes an existing toggle.
   
 Note: The toggle values that are defined globally are identified by the application code name "Global".
@@ -52,7 +52,14 @@ The solution uses a layered architectural pattern splitting the code in three la
 
 ### REST API Layer
 
+- **TogglesWebApi**: this project contains the Web API controllers that handle the requests and the Startup code with the IOC Container configuration code.
+
 ### Business Logic Layer
+
+- **Toggles.BusinessEntities**: in this project there are the entities that represent each business concept of the Toggles context;
+- **Toggles.BusinessRules**: this project has the commands and loaders that implement each business use case. The code separation is inspired by [CQRS pattern](https://martinfowler.com/bliki/CQRS.html);
+- **Toggles.BusinessRules.Contracts**: here are all the contracts to call interact with the business rules from outside the Business Logic Layer;
+- **Toggles.Repositories.Contracts**: this project has all the contracts (Repositories and Unit Of Work) that the business rules require to be implemented by the Data Access Layer. This allows to abstract the data access logic and comply with the dependency rule of the Clean Architecture principles.
 
 ### Data Access Layer
 
