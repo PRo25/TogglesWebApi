@@ -15,5 +15,10 @@ namespace Toggles.DataAccess.DbEntities
         public string ApplicationVersion { get; set; }
 
         public ToggleDbEntity Toggle { get; set; }
+
+        public ToggleValueDbEntity()
+        {
+            this.Id = Guid.NewGuid();
+        }
     }
 }

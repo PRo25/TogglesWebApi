@@ -8,6 +8,12 @@ namespace Toggles.DataAccess
         public DbSet<ToggleDbEntity> Toggles { get; set; }
         public DbSet<ToggleValueDbEntity> ToggleValues { get; set; }
 
+        public TogglesDbContext()
+            : base()
+        {
+
+        }
+
         public TogglesDbContext(DbContextOptions<TogglesDbContext> options)
             : base(options)
         {

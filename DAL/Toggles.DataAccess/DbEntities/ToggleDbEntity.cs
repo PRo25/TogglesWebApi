@@ -15,6 +15,7 @@ namespace Toggles.DataAccess.DbEntities
 
         public ToggleDbEntity()
         {
+            this.Id = Guid.NewGuid();
             this.Values = new HashSet<ToggleValueDbEntity>();
         }
     }
