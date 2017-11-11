@@ -1,0 +1,187 @@
+{
+	"info": {
+		"name": "Toggles",
+		"_postman_id": "f4edd5c3-e591-fe6f-f0fd-26e6385e01dc",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Toggles",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:59888/api/toggles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "59888",
+					"path": [
+						"api",
+						"toggles"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Toggle By ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:59888/api/toggles/a699c2a5-401e-4cf8-9a83-b2e17699566f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "59888",
+					"path": [
+						"api",
+						"toggles",
+						"a699c2a5-401e-4cf8-9a83-b2e17699566f"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Toggles By App",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:59888/api/toggles/ByApp/Abc/1.0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "59888",
+					"path": [
+						"api",
+						"toggles",
+						"ByApp",
+						"Abc",
+						"1.0"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Toggle",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": \"a699c2a5-401e-4cf8-9a83-b2e17699566f\",\n        \"codeName\": \"isTest\",\n        \"description\": null,\n        \"values\": [\n            {\n                \"application\": {\n                    \"codeName\": \"Global\",\n                    \"version\": null\n                },\n                \"id\": \"a00b6e34-e70c-4bc7-9cf1-74a122a6b802\",\n                \"value\": true,\n                \"toggle\": null\n            },\n            {\n                \"application\": {\n                    \"codeName\": \"Xpto\",\n                    \"version\": \"1.0\"\n                },\n                \"id\": \"50070e34-e70c-4bc7-9cf1-74a122a6b802\",\n                \"value\": false,\n                \"toggle\": null\n            }\n        ]\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:59888/api/toggles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "59888",
+					"path": [
+						"api",
+						"toggles"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update Toggle",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": \"a699c2a5-401e-4cf8-9a83-b2e17699566f\",\n        \"codeName\": \"isTest\",\n        \"description\": \"Description after update\",\n        \"values\": [\n            {\n                \"application\": {\n                    \"codeName\": \"Global\",\n                    \"version\": null\n                },\n                \"id\": \"a00b6e34-e70c-4bc7-9cf1-74a122a6b802\",\n                \"value\": false,\n                \"toggleId\": \"a699c2a5-401e-4cf8-9a83-b2e17699566f\",\n                \"toggle\": null\n            },\n            {\n                \"application\": {\n                    \"codeName\": \"Abc\",\n                    \"version\": \"1.0\"\n                },\n                \"id\": \"abc00e34-e70c-4bc7-9cf1-74a122a6b802\",\n                \"value\": true,\n                \"toggleId\": \"a699c2a5-401e-4cf8-9a83-b2e17699566f\",\n                \"toggle\": null\n            }\n        ]\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:59888/api/toggles/a699c2a5-401e-4cf8-9a83-b2e17699566f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "59888",
+					"path": [
+						"api",
+						"toggles",
+						"a699c2a5-401e-4cf8-9a83-b2e17699566f"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Toggle",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:59888/api/toggles/a699c2a5-401e-4cf8-9a83-b2e17699566f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "59888",
+					"path": [
+						"api",
+						"toggles",
+						"a699c2a5-401e-4cf8-9a83-b2e17699566f"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
