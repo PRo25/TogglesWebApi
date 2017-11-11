@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Toggles.DataAccess.DbEntities;
 
 namespace Toggles.DataAccess.Mocks
@@ -9,7 +11,7 @@ namespace Toggles.DataAccess.Mocks
     {
         public TogglesDbContext Object { get; private set; }
 
-        protected MockOfTogglesDbContext()
+        public MockOfTogglesDbContext()
         {
             this.CreateMockedObject();
         }
@@ -39,13 +41,24 @@ namespace Toggles.DataAccess.Mocks
         private void AddMockedToggleDbEntitiesToDbContext(IList<ToggleDbEntity> mockedToggleDbEntities)
         {
             this.Object.Toggles.AddRange(mockedToggleDbEntities);
-            this.Object.SaveChanges();
+            this.Object.SaveChanges(true);
+            this.DetachAllDbEntities();
+        }
+
+        private void DetachAllDbEntities()
+        {
+            IList<EntityEntry> entries = this.Object.ChangeTracker.Entries().ToList();
+            foreach (EntityEntry entry in entries)
+            {
+                entry.State = EntityState.Detached;
+            }
         }
 
         private void AddMockedToggleValueDbEntitiesToDbContext(IList<ToggleValueDbEntity> mockedToggleValueDbEntities)
         {
             this.Object.ToggleValues.AddRange(mockedToggleValueDbEntities);
-            this.Object.SaveChanges();
+            this.Object.SaveChanges(true);
+            this.DetachAllDbEntities();
         }
     }
 }

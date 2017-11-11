@@ -1,13 +1,13 @@
 ﻿using Moq;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using Toggles.BusinessEntities;
 
 namespace Toggles.Repositories.Contracts.Mocks
 {
-    public class MockOfITogglesRepository : Mock<ITogglesRepository>
+    public class MockOfITogglesRepository : RepositoryMock<ITogglesRepository, Toggle>
     {
         public MockOfITogglesRepository()
+            : base()
         {
             this.Initialize();
         }

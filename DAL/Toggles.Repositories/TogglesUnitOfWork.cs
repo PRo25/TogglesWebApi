@@ -19,11 +19,11 @@ namespace Toggles.Repositories
 
         public TogglesUnitOfWork(TogglesDbContext togglesDbContext,
             ITogglesRepository togglesRepository,
-            IClientApplicationToggleValuesRepository applicationToggleValuesRepository)
+            IClientApplicationToggleValuesRepository clientApplicationToggleValuesRepository)
         {
             this.togglesDbContext = togglesDbContext;
             this.TogglesRepository = togglesRepository;
-            this.ClientApplicationToggleValuesRepository = applicationToggleValuesRepository;
+            this.ClientApplicationToggleValuesRepository = clientApplicationToggleValuesRepository;
         }
 
         public int SaveChanges()
