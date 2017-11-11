@@ -58,12 +58,12 @@ The solution uses a layered architectural pattern splitting the code in three la
 
 - **Toggles.BusinessEntities**: in this project there are the entities that represent each business concept of the Toggles context;
 - **Toggles.BusinessRules**: this project has the commands and loaders that implement each business use case. The code separation is inspired by [CQRS pattern](https://martinfowler.com/bliki/CQRS.html);
-- **Toggles.BusinessRules.Contracts**: here are all the contracts to call interact with the business rules from outside the Business Logic Layer;
+- **Toggles.BusinessRules.Contracts**: here are all the contracts to interact with the business rules from outside the Business Logic Layer, in this case from the REST API Layer;
 - **Toggles.Repositories.Contracts**: this project has all the contracts (repositories and unit of work) that the business rules require to be implemented by the Data Access Layer. This allows to abstract the data access logic and comply with the dependency rule of the Clean Architecture principles.
 
 ### Data Access Layer
 
-- **Toggles.Repositories**: this project contains all the repositories and unit of work implementations of the contracts in Toggles.Repositories.Contracts. The queries to the data are defined here, in the corresponding repositories, and also the logic to add, update or delete entities and persist those changes to the DB;
+- **Toggles.Repositories**: this project contains all the repositories and unit of work implementations of the contracts in Toggles.Repositories.Contracts. The queries to the data are defined here, in the corresponding repositories, and also the logic to add, update or delete entities and persist those changes to the database;
 - **Toggles.DataAccess**: in this project there are the DB context implementation using Entity Framework Core with the mappings configuration of the DB entities to the corresponding DB tables.
 
 ## TODO
