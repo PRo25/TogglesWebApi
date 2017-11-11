@@ -19,12 +19,19 @@ namespace Toggles.BusinessRules.Contracts.Mocks
 
         private void Initialize()
         {
+            this.Setup(m => m.GetAll())
+                .Returns(() => this.mockedToggles);
             this.Setup(m => m.GetById(It.IsAny<Guid>()))
                 .Returns((Guid id) =>
                 {
-                    Toggle toggle = this.mockedToggles.First(t => t.Id == id);
+                    Toggle toggle = this.mockedToggles.FirstOrDefault(t => t.Id == id);
                     return toggle;
                 });
+        }
+
+        public void SetupToThrowException(Exception exception)
+        {
+            this.Setup(m => m.GetById(It.IsAny<Guid>())).Throws(exception);
         }
     }
 }
